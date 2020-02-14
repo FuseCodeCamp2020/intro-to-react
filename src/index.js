@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 function Square (props) {
+  const [value, setValue] = useState(0)
+
   return (
-    <button className='square'>
-      {props.value}
+    <button className='square' onClick={() => setValue(value + 1)}>
+      {value}
     </button>
   )
 }
@@ -17,19 +19,19 @@ function Board () {
     <div>
       <div className='status'>{status}</div>
       <div className='board-row'>
-        <Square value={1} />
-        <Square value={2} />
-        <Square value={3} />
+        <Square />
+        <Square />
+        <Square />
       </div>
       <div className='board-row'>
-        <Square value={4} />
-        <Square value={5} />
-        <Square value={6} />
+        <Square />
+        <Square />
+        <Square />
       </div>
       <div className='board-row'>
-        <Square value={7} />
-        <Square value={8} />
-        <Square value={9} />
+        <Square />
+        <Square />
+        <Square />
       </div>
     </div>
   )
